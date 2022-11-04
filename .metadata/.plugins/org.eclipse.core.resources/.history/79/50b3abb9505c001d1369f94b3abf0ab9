@@ -14,6 +14,7 @@ int KeyReg1[NUMBER_OF_BUTTON] = {NORMAL_STATE};
 int KeyReg2[NUMBER_OF_BUTTON] = {NORMAL_STATE};
 
 int KeyReg3[NUMBER_OF_BUTTON] ={NORMAL_STATE};
+//int status = 0;
 
 int TimeOutForKeyPress[NUMBER_OF_BUTTON] = {100};
 
@@ -48,13 +49,13 @@ void getKeyInput(){
 		  KeyReg2[i] = KeyReg1[i];
 		  KeyReg1[i] = KeyReg0[i];
 		  switch (i){
-		  case 0: // read data from Button 1
+		  case 0:
 			  KeyReg0[i] = HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
 			  break;
-		  case 1: // read data from Button 2
+		  case 1:
 			  KeyReg0[i] = HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
 			  break;
-		  case 2: // read data from Button 1
+		  case 2:
 			  KeyReg0[i] = HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
 			  break;
 		  default:

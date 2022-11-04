@@ -29,6 +29,7 @@
 #include "fsm_automatic_2.h"
 #include <fsm_mode.h>
 #include <software_timer.h>
+#include "button2.h"
 #include "led_display.h"
 
 /* USER CODE END Includes */
