@@ -27,10 +27,10 @@ void fsm_mode_run(){
 //			setTimer1(500);
 //		}
 //
-		if (isButtonflag(but1) == 1){
-			status_1 = MODE2;
-			setTimer3(1000);
-		}
+//		if (isButtonflag(but1) == 1){
+//			status_1 = MODE2;
+//			setTimer3(1000);
+//		}
 
 		break;
 	case MODE2:
@@ -42,10 +42,10 @@ void fsm_mode_run(){
 //
 //		}
 //
-		if (isButtonflag(but1) == 1){
-			status_1 = MODE3;
-			setTimer3(1000);
-		}
+//		if (isButtonflag(but1) == 1){
+//			status_1 = MODE3;
+//			setTimer3(1000);
+//		}
 
 		break;
 	case MODE3:
@@ -55,17 +55,17 @@ void fsm_mode_run(){
 //			setTimer1(200);
 //		}
 //
-		if (isButtonflag(but1) == 1){
-			status_1 = MODE4;
-			setTimer3(1000);
-		}
+//		if (isButtonflag(but1) == 1){
+//			status_1 = MODE4;
+//			setTimer3(1000);
+//		}
 
 		break;
 	case MODE4:
-		if (isButtonflag(but1) == 1){
-			status_1 = MODE1;
-			setTimer3(1000);
-		}
+//		if (isButtonflag(but1) == 1){
+//			status_1 = MODE1;
+//			setTimer3(1000);
+//		}
 		break;
 	default:
 		break;
