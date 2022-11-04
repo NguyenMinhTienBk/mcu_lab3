@@ -1,0 +1,50 @@
+/*
+ * global.h
+ *
+ *  Created on: Sep 30, 2022
+ *      Author: pc
+ */
+#include "main.h"
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+
+#define INIT 			0
+
+#define AUTO_RED 		1
+#define AUTO_GREEN 		2
+#define AUTO_YELLOW 	3
+
+#define MODE1 			7
+#define MODE2 			8
+#define MODE3 			9
+#define MODE4 			10
+
+#define MAN_RED 		12
+#define MAN_GREEN 		13
+#define MAN_YELLOW 		14
+
+
+//extern  int status;
+extern  int status1;
+extern  int status2;
+
+extern int but1;
+extern int but2;
+extern int but3;
+
+extern int timered;
+extern int timegreen;
+extern int timeyellow;
+
+//extern int timeredver;
+//extern int timegreenver;
+//extern int timeyellowver;
+
+
+//extern int timeredhor;
+//extern int timegreenhor;
+//extern int timeyellowhor;
+
+#endif /* INC_GLOBAL_H_ */

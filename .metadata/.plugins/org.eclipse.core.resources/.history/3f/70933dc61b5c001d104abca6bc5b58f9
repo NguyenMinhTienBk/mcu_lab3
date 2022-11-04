@@ -1,0 +1,19 @@
+/*
+ * FSM_AUTOMATIC.h
+ *
+ *  Created on: Sep 30, 2022
+ *      Author: pc
+ */
+
+#ifndef INC_FSM_MODE_H_
+#define INC_FSM_MODE_H_
+
+#include "global.h"
+#include "_SOFTWARE_TIMER_.h"
+#include "button.h"
+#include "button2.h"
+//#include "traffic.h"
+void fsm_automatic_run();
+
+
+#endif /* INC_FSM_MODE_H_ */

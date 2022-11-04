@@ -1,0 +1,77 @@
+/*
+ * fsm_manual.c
+ *
+ *  Created on: Oct 7, 2022
+ *      Author: pc
+ */
+
+#include "fsm_manual.h"
+
+void fsm_manual_run(){
+
+	switch (status){
+		case MAN_RED:
+
+			//SetRed();
+
+//			if (timer1_flag == 1){ // switch autored
+//				//status = AUTO_RED;
+//
+//				setTimer1(500);
+//			}
+//			if (isButton1flag() == 1){
+//				//button1_flag = 0;
+//				//clearTimer1();
+//				//status = MAN_GREEN;
+//				setTimer1(1000);
+//			}
+//
+//			if (isButton2flag() == 1){
+//				//status = MAN_YELLOW;
+//				setTimer1(1000);
+//			}
+
+			break;
+		case MAN_GREEN:
+
+			//SetGreen();
+
+//			if (timer1_flag == 1){ // switch autored
+//				//status = AUTO_RED;
+//
+//				setTimer1(500);
+//			}
+//			if (isButton1flag() == 1){
+//				//clearTimer1();
+//				//status = MAN_YELLOW;
+//				setTimer1(1000);
+//			}
+//
+//			if (isButton2flag() == 1){
+//				//status = MAN_RED;
+//				setTimer1(1000);
+//			}
+			break;
+		case MAN_YELLOW:
+
+
+//
+//			if (timer1_flag == 1){ // switch autored
+//				//status = AUTO_RED;
+//
+//			}
+//			if (isButton1flag() == 1){
+//				//clearTimer1();
+//				//status = MAN_RED;
+//				setTimer1(1000);
+//			}
+//
+//			if (isButton2flag() == 1){
+//				//status = MAN_GREEN;
+//				setTimer1(1000);
+//			}
+			break;
+		default:
+			break;
+	}
+}

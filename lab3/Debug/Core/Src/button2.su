@@ -1,0 +1,3 @@
+button2.c:19:5:isButton2flag	4	static
+button2.c:28:6:subKeyProcess2	4	static
+button2.c:34:6:getKeyInput2	8	static

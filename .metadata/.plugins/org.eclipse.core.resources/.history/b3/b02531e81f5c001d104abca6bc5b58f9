@@ -1,0 +1,30 @@
+/*
+ * global.h
+ *
+ *  Created on: Sep 30, 2022
+ *      Author: pc
+ */
+#include "main.h"
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+
+#define INIT 0
+#define MODE1 1
+#define MODE2 2
+#define MODE3 3
+#define MODE4 4
+
+#define MAN_RED 12
+#define MAN_GREEN 13
+#define MAN_YELLOW 14
+
+
+//extern  int status;
+extern  int status;
+extern int but1;
+extern int but2;
+extern int but3;
+
+#endif /* INC_GLOBAL_H_ */

@@ -1,0 +1,11 @@
+led_display.c:10:6:display7SEG	16	static
+led_display.c:117:6:update7SEG	16	static
+led_display.c:141:6:updateLedBuffer	16	static
+led_display.c:158:6:SetOffVer	8	static
+led_display.c:164:6:SetRedVer	8	static
+led_display.c:170:6:SetGreenVer	8	static
+led_display.c:176:6:SetYellowVer	8	static
+led_display.c:183:6:SetOffHor	8	static
+led_display.c:189:6:SetRedHor	8	static
+led_display.c:195:6:SetGreenHor	8	static
+led_display.c:201:6:SetYellowHor	8	static
