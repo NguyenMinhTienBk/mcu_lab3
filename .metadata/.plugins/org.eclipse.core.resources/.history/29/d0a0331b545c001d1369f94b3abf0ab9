@@ -37,11 +37,11 @@ int isButtonflag(int index){
 }
 
 
-//void subKeyProcess(){
-//	//if(KeyReg3 == PRESSED_STATE){
-//		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-//		//button1_flag = 1
-//}
+void subKeyProcess(){
+	//if(KeyReg3 == PRESSED_STATE){
+		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		//button1_flag = 1
+}
 
 void getKeyInput(){
 	for (int i = 0; i < NUMBER_OF_BUTTON; i++){

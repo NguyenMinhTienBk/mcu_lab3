@@ -15,8 +15,8 @@ void display7SEG(int num);
 //int led_buffer[4] = {1, 5, 0, 8};
 
 void update7SEG(int index);
-void updateLed12Buffer(int led12);
-void updateLed34Buffer(int led34);
+void updateLedBuffer(int led12, int led34);
+
 void SetOffVer();
 void SetRedVer();
 void SetGreenVer();
