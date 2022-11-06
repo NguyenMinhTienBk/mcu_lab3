@@ -16,9 +16,7 @@
 //extern int button1_flag;
 //int isButton1flag();
 int isButtonflag(int index);
-//extern int button1_flag;
-void forgetkey();
-//void getKeyInput(int i);
+
 void getKeyInput();
 
 

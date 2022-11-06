@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "input_processing.h"
 #include "button.h"
 #include "fsm_manual.h"
 #include "fsm_automatic_1.h"
@@ -111,6 +110,8 @@ int main(void)
 	  //fsm_for_input_processing();
 	  fsm_automatic_1_run();
 	  fsm_automatic_2_run();
+
+	  //updateLedBuffer(timered, led34)
 	  //fsm_mode_run();
     /* USER CODE END WHILE */
 

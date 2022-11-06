@@ -28,20 +28,20 @@ int button_flag[NUMBER_OF_BUTTON] = {0};
 //	return 0;
 //}
 
-int isButtonflag(int index){
-	if (button_flag[index] == 1){
-		button_flag[index] = 0;
-		return 1;
-	}
-	return 0;
-}
+//int isButtonflag(int index){
+//	if (button_flag[index] == 1){
+//		button_flag[index] = 0;
+//		return 1;
+//	}
+//	return 0;
+//}
 
 
-void subKeyProcess(){
-	//if(KeyReg3 == PRESSED_STATE){
-		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		//button1_flag = 1
-}
+//void subKeyProcess(){
+//	//if(KeyReg3 == PRESSED_STATE){
+//		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+//		//button1_flag = 1
+//}
 
 void getKeyInput(){
 	for (int i = 0; i < NUMBER_OF_BUTTON; i++){
