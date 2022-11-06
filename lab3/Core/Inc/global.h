@@ -38,6 +38,9 @@ extern int timered;
 extern int timegreen;
 extern int timeyellow;
 
+extern int led12;
+extern int led34;
+
 
 //extern int timeredver;
 //extern int timegreenver;

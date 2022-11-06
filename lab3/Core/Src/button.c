@@ -28,13 +28,13 @@ int button_flag[NUMBER_OF_BUTTON] = {0};
 //	return 0;
 //}
 
-int isButtonflag(int index){
-	if (button_flag[index] == 1){
-		button_flag[index] = 0;
-		return 1;
-	}
-	return 0;
-}
+//int isButtonflag(int index){
+//	if (button_flag[index] == 1){
+//		button_flag[index] = 0;
+//		return 1;
+//	}
+//	return 0;
+//}
 
 
 //void subKeyProcess(){

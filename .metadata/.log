@@ -232,3 +232,40 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-04 20:56:17.434
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-11-06 12:54:27.552 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  D:\MCU_LAB\lab3\lab3\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\MCU_LAB\lab3\lab3\.project
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-11-06 12:54:31.984
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-06 12:54:37.235
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-06 12:54:37.360
+!MESSAGE Log4j initialized with config file D:\MCU_LAB\lab3\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-06 12:54:51.189
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-06 12:54:55.519
+!MESSAGE Indexed 'lab3' (30 sources, 109 headers) in 4.02 sec: 7,567 declarations; 37,075 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.42%)
+!SESSION 2022-11-06 16:30:36.216 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-06 16:30:58.293
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-06 16:30:58.573
+!MESSAGE Log4j initialized with config file D:\MCU_LAB\lab3\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-06 16:31:19.644
+!MESSAGE Started RMI Server, listening on port 41337

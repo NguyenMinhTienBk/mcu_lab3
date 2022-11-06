@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "input_processing.h"
 #include "button.h"
 #include "fsm_manual.h"
 #include "fsm_automatic_1.h"
@@ -101,6 +100,7 @@ int main(void)
 
   status_1 = INIT;
   status_2 = INIT;
+  setTimer3(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */

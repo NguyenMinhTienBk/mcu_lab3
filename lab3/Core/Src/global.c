@@ -18,6 +18,9 @@ int timered = 5;
 int timegreen = 3;
 int timeyellow = 2;
 
+int led12 = 0;
+int led34 = 0;
+
 //int timeredver = 5;
 //int timegreenver = 3;
 //int timeyellowver = 2;

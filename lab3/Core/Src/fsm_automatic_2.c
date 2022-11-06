@@ -33,15 +33,18 @@ void fsm_automatic_2_run(){
 		SetOffHor();
 		status_2 = AUTO_GREEN;
 		//temp = timeredver * 1000;
+		led34 = timegreen;
+		display7Seg_countdown_Led34();
 		setTimer2(timeTimer(timegreen));
 		break;
 	case AUTO_RED :
 		SetRedHor();
 		if (timer2_flag == 1){
 			status_2 = AUTO_GREEN;
+			led34 = timegreen;
 			setTimer2(timeTimer(timegreen));
 		}
-
+		display7Seg_countdown_Led34();
 //		if (isButton1flag() == 1){
 //			status = MAN_RED;
 //			setTimer1(1000);
@@ -53,9 +56,10 @@ void fsm_automatic_2_run(){
 		SetGreenHor();
 		if (timer2_flag == 1){
 			status_2 = AUTO_YELLOW;
+			led34 = timeyellow;
 			setTimer2(timeTimer(timeyellow));
 		}
-
+		display7Seg_countdown_Led34();
 //		if (isButton1flag() == 1){
 //			status = MAN_GREEN;
 //			setTimer1(1000);
@@ -66,8 +70,10 @@ void fsm_automatic_2_run(){
 		SetYellowHor();
 		if (timer2_flag == 1){
 			status_2 = AUTO_RED;
+			led34 = timered;
 			setTimer2(timeTimer(timered));
 		}
+		display7Seg_countdown_Led34();
 //		if (isButton1flag() == 1){
 //			//button1_flag = 0;
 //			status = MAN_YELLOW;

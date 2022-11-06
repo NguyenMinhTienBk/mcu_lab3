@@ -17,6 +17,20 @@ void display7SEG(int num);
 void update7SEG(int index);
 void updateLed12Buffer(int led12);
 void updateLed34Buffer(int led34);
+
+void SetLed7Seg1On();
+void SetLed7Seg2On();
+void SetLed7Seg3On();
+void SetLed7Seg4On();
+void SetLed7SegallOn();
+void SetLed7SegallOff();
+
+void display7Seg_countdown_Led12();
+void display7Seg_countdown_Led34();
+
+void display7SEGLED12(int led1_2);
+void display7SEGLED34(int led3_4);
+
 void SetOffVer();
 void SetRedVer();
 void SetGreenVer();
