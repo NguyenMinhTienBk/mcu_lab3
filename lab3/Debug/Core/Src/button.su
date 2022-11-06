@@ -1,2 +1,1 @@
-button.c:31:5:isButtonflag	16	static
 button.c:46:6:getKeyInput	16	static
