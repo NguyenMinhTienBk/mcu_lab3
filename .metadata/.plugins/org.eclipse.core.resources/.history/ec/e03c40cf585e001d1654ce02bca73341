@@ -22,8 +22,6 @@ void SetLed7Seg1On();
 void SetLed7Seg2On();
 void SetLed7Seg3On();
 void SetLed7Seg4On();
-void SetLed7Seg12On();
-void SetLed7Seg34On();
 void SetLed7SegallOn();
 void SetLed7SegallOff();
 

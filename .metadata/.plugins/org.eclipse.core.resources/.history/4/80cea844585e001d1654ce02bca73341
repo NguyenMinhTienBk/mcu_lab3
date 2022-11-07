@@ -5,6 +5,12 @@
  *      Author: pc
  */
 
+/*
+ * FSM_AUTOMATIC.c
+ *
+ *  Created on: Sep 30, 2022
+ *      Author: pc
+ */
 
 #include <fsm_automatic_1.h>
 //int temp = 0;

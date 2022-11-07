@@ -149,7 +149,7 @@ void display7SEGLED12(int led1_2){
 			SetLed7Seg1On();
 			update7SEG(0);
 		setTimer4(10);
-	}
+		}
 		if (timer4_flag == 1){
 				SetLed7Seg2On();
 				update7SEG(1);

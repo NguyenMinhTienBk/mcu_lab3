@@ -141,24 +141,10 @@ void update7SEG(int index){
 
 void display7SEGLED12(int led1_2){
 	updateLed12Buffer(led1_2);
-//	SetLed7Seg1On();
-//	update7SEG(0);
-//	SetLed7Seg2On();
-//	update7SEG(1);
-	if (timer4_flag == 1){
-			SetLed7Seg1On();
-			update7SEG(0);
-		setTimer4(10);
-	}
-		if (timer4_flag == 1){
-				SetLed7Seg2On();
-				update7SEG(1);
-		setTimer4(10);
-		}
-		if (timer4_flag == 1){
-			SetLed7Seg12On();
-			setTimer4(10);
-		}
+	SetLed7Seg1On();
+	update7SEG(0);
+	SetLed7Seg2On();
+	update7SEG(1);
 	//SetLed7Seg12On();
 }
 
