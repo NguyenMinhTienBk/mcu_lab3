@@ -102,9 +102,7 @@ int main(void)
   status_2 = INIT;
   int status_led7seg = 0;
   int index_led = 0;
-  setTimer1(1000);
-  setTimer2(1000);
-  setTimer3(1000);
+  setTimer3(500);
   setTimer4(1000);
   /* USER CODE END 2 */
 
@@ -116,7 +114,6 @@ int main(void)
 	  //fsm_for_input_processing();
 	  fsm_automatic_1_run();
 	  fsm_automatic_2_run();
-
 	  if (timer3_flag == 1){
 		  updateLedBuffer(led12,led34);
 		  switch (status_led7seg) {
@@ -147,12 +144,6 @@ int main(void)
 		  default:
 			  break;
 		  }
-		  setTimer3(250);
-	  }
-	  if(timer4_flag == 1){
-		  	led12--;
-	  		led34--;
-	  		setTimer4(1000);
 	  }
 	  //updateLedBuffer(timered, led34)
 	  //fsm_mode_run();

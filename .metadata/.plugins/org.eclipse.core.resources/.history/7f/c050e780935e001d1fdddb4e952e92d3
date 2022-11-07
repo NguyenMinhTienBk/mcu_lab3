@@ -33,8 +33,6 @@ void display7Seg_countdown_Led34();
 void display7SEGLED12(int led1_2);
 void display7SEGLED34(int led3_4);
 
-void updateLedBuffer(int led1_2,int led3_4);
-
 void SetOffVer();
 void SetRedVer();
 void SetGreenVer();

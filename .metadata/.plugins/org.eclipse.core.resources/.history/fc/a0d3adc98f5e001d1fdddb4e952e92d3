@@ -145,10 +145,10 @@ void display7SEGLED12(int led1_2){
 //	update7SEG(0);
 //	SetLed7Seg2On();
 //	update7SEG(1);
-	if (timer5_flag == 1){
+	if (timer4_flag == 1){
 		SetLed7Seg1On();
 		update7SEG(0);
-		setTimer5(250);
+		setTimer4(250);
 	}
 	if (timer4_flag == 1){
 		SetLed7Seg2On();
@@ -173,14 +173,14 @@ void display7SEGLED34(int led3_4){
 		setTimer4(500);
 	}
 	if (timer4_flag == 1){
-		SetLed7Seg3On();
-		update7SEG(2);
-		setTimer4(250);
+	SetLed7Seg3On();
+	update7SEG(2);
+	setTimer4(250);
 	}
 	if (timer4_flag == 1){
 		SetLed7Seg4On();
 		update7SEG(3);
-		setTimer4(250);
+	setTimer4(250);
 	}
 //	if (timer4_flag == 1){
 //		//SetLed7Seg34On();
@@ -222,13 +222,6 @@ void updateLed34Buffer(int led3_4){
 		led_buffer[2] = led3_4 / 10;
 		led_buffer[3] = led3_4 % 10;
 //	}
-}
-
-void updateLedBuffer(int led1_2,int led3_4){
-	led_buffer[0] = led1_2 / 10;
-	led_buffer[1] = led1_2 % 10;
-	led_buffer[2] = led3_4 / 10;
-	led_buffer[3] = led3_4 % 10;
 }
 
 void SetLed7Seg1On(){
