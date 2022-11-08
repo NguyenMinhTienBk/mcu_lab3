@@ -14,7 +14,6 @@
 #include "input_reading.h"
 #include "led_display.h"
 
-//#include "traffic.h"
 void fsm_mode_run();
 
 

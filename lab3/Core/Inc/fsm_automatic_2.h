@@ -14,5 +14,4 @@
 #include "led_display.h"
 void fsm_automatic_2_run();
 
-int timeTimer(int time);
 #endif /* INC_FSM_AUTOMATIC_2_H_ */

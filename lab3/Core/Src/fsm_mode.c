@@ -13,56 +13,67 @@ void fsm_mode_run(){
 		status_mode = MODE1;
 		status_ver = INIT;
 		status_hor = INIT;
-		status_led7seg = MODE1_led7seg_1;
+		status_led7seg = INIT;
 		//setTimer1(500);
 		break;
 	case MODE1 :
 
-//		if (timer1_flag == 1){
-//			status = AUTO_GREEN;
-//			setTimer1(500);
-//		}
-//
 		if (isButtonflag(but1) == 1){
+			clearTimer1();
+			clearTimer2();
+			clearTimer3();
 			status_mode = MODE2;
+			SetRedVerHor(); // to when blinky, led red ver and hor are the same
+			status_ver = MODIFY_RED;
+			status_hor = MODIFY_RED;
+			led12 = MODE2;
+			led34 = timered;
+			status_led7seg = MODE_MODIFY_led7seg_1;
 			//setTimer3(1000);
 		}
 
 		break;
 	case MODE2:
 
-//		if (timer1_flag == 1){
-//
-//			status = AUTO_YELLOW;
-//			setTimer1(300);
-//
-//		}
-//
 		if (isButtonflag(but1) == 1){
+			clearTimer1();
+			clearTimer2();
+			clearTimer3();
 			status_mode = MODE3;
+			status_ver = MODIFY_GREEN;
+			status_hor = MODIFY_GREEN;
+			led12 = MODE3;
+			led34 = timegreen;
+			status_led7seg = MODE_MODIFY_led7seg_1;
 			//setTimer3(1000);
 		}
 
 		break;
 	case MODE3:
 
-//		if (timer1_flag == 1){
-//			status = AUTO_RED;
-//			setTimer1(200);
-//		}
-//
 		if (isButtonflag(but1) == 1){
+			clearTimer1();
+			clearTimer2();
+			clearTimer3();
 			status_mode = MODE4;
+			status_ver = MODIFY_YELLOW;
+			status_hor = MODIFY_YELLOW;
+			led12 = MODE4;
+			led34 = timeyellow;
+			status_led7seg = MODE_MODIFY_led7seg_1;
 			//setTimer3(1000);
 		}
 
 		break;
 	case MODE4:
 		if (isButtonflag(but1) == 1){
-			status_mode = MODE1;
-			status_ver = INIT;
-			status_hor = INIT;
-			status_led7seg = MODE1_led7seg_1;
+			clearTimer1();
+			clearTimer2();
+			clearTimer3();
+			status_mode = INIT;
+//			status_ver = INIT;
+//			status_hor = INIT;
+//			status_led7seg = MODE1_led7seg_1;
 			//setTimer3(1000);
 		}
 		break;

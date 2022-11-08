@@ -15,6 +15,13 @@ extern int timer4_flag;
 extern int timer5_flag;
 extern int timer6_flag;
 
+void clearTimer0();
+void clearTimer1();
+void clearTimer2();
+void clearTimer3();
+void clearTimer4();
+void clearTimer5();
+void clearTimer6();
 
 void setTimer0(int duration);
 void setTimer1(int duration);

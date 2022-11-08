@@ -24,6 +24,36 @@ int timer6_counter = 0;
 
 int TIMER_CYCLE = 10;
 
+void clearTimer0(){
+	timer0_counter = 0;
+	timer0_flag = 1;
+}
+void clearTimer1(){
+	timer1_counter = 0;
+	timer1_flag = 1;
+}
+void clearTimer2(){
+	timer2_counter = 0;
+	timer2_flag = 1;
+}
+void clearTimer3(){
+	timer3_counter = 0;
+	timer3_flag = 1;
+}
+
+void clearTimer4(){
+	timer4_counter = 0;
+	timer4_flag = 1;
+}
+void clearTimer5(){
+	timer5_counter = 0;
+	timer5_flag = 1;
+}
+void clearTimer6(){
+	timer6_counter = 0;
+	timer6_flag = 1;
+}
+
 void setTimer0 ( int duration ){
 	timer0_counter = duration / TIMER_CYCLE ;
 	timer0_flag = 0;

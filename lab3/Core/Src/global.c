@@ -24,10 +24,6 @@ int timeyellow = 2;
 int led12 = 5;
 int led34 = 3;
 
-//int timeredver = 5;
-//int timegreenver = 3;
-//int timeyellowver = 2;
-
-//int timeredhor = 5;
-//int timegreenhor = 3;
-//int timeyellowhor = 2;
+int timeTimer(int time){
+	return time * 1000;
+}

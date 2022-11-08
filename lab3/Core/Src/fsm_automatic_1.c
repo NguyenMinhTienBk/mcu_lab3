@@ -7,11 +7,6 @@
 
 
 #include <fsm_automatic_1.h>
-//int temp = 0;
-
-//int timeTimer(int time){
-//	return time * 1000;
-//}
 
 void fsm_automatic_1_run(){
 	switch (status_ver){
@@ -21,10 +16,6 @@ void fsm_automatic_1_run(){
 		led12 = timered;
 		status_ver = AUTO_RED;
 
-		//display7SEGLED12(led12);
-		//setTimer3(1000);
-		//display7Seg_countdown_Led12();
-		//temp = timeredver * 1000;
 		setTimer1(timeTimer(timered));
 		break;
 	case AUTO_RED:
@@ -32,16 +23,8 @@ void fsm_automatic_1_run(){
 		if (timer1_flag == 1){
 			status_ver = AUTO_GREEN;
 			led12 = timegreen;
-			//display7SEGLED12(led12);
 			setTimer1(timeTimer(timegreen));
 		}
-
-		//display7Seg_countdown_Led12();
-
-//		if (isButton1flag() == 1){
-//			status = MAN_RED;
-//			setTimer1(1000);
-//		}
 
 		break;
 	case AUTO_GREEN:
@@ -50,14 +33,8 @@ void fsm_automatic_1_run(){
 		if (timer1_flag == 1){
 			status_ver = AUTO_YELLOW;
 			led12 = timeyellow;
-			//display7SEGLED12(led12);
 			setTimer1(timeTimer(timeyellow));
 		}
-		//display7Seg_countdown_Led12();
-//		if (isButton1flag() == 1){
-//			status = MAN_GREEN;
-//			setTimer1(1000);
-//		}
 
 		break;
 	case AUTO_YELLOW:
@@ -66,15 +43,27 @@ void fsm_automatic_1_run(){
 		if (timer1_flag == 1){
 			status_ver = AUTO_RED;
 			led12 = timered;
-			//display7SEGLED12(led12);
 			setTimer1(timeTimer(timered));
 		}
-		//display7Seg_countdown_Led12();
-//		if (isButton1flag() == 1){
-//			//button1_flag = 0;
-//			status = MAN_YELLOW;
-//			setTimer1(1000);
-//		}
+
+		break;
+	case MODIFY_RED:
+		if (timer1_flag == 1){
+			BlinkyRedVer();
+			setTimer1(500);
+		}
+		break;
+	case MODIFY_GREEN:
+		if (timer1_flag == 1){
+			BlinkyGreenVer();
+			setTimer1(500);
+		}
+		break;
+	case MODIFY_YELLOW:
+		if (timer1_flag == 1){
+			BlinkyYellowVer();
+			setTimer1(500);
+		}
 		break;
 	default:
 		break;
