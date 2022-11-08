@@ -25,10 +25,18 @@
 #define MAN_GREEN 		13
 #define MAN_YELLOW 		14
 
+#define MODE1_led7seg_1 			20
+#define MODE1_led7seg_2 			21
+#define MODE1_led7seg_3 			22
+#define MODE1_led7seg_4 			23
 
-//extern  int status;
-extern  int status_1;
-extern  int status_2;
+
+extern  int status_mode;
+extern  int status_ver;
+extern  int status_hor;
+extern  int status_led7seg;
+
+extern int index_led;
 
 extern int but1;
 extern int but2;

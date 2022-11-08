@@ -8,8 +8,8 @@ C_SRCS += \
 ../Core/Src/button.c \
 ../Core/Src/fsm_automatic_1.c \
 ../Core/Src/fsm_automatic_2.c \
-../Core/Src/fsm_manual.c \
 ../Core/Src/fsm_mode.c \
+../Core/Src/fsm_mode_Led7Seg.c \
 ../Core/Src/global.c \
 ../Core/Src/input_reading.c \
 ../Core/Src/led_display.c \
@@ -26,8 +26,8 @@ OBJS += \
 ./Core/Src/button.o \
 ./Core/Src/fsm_automatic_1.o \
 ./Core/Src/fsm_automatic_2.o \
-./Core/Src/fsm_manual.o \
 ./Core/Src/fsm_mode.o \
+./Core/Src/fsm_mode_Led7Seg.o \
 ./Core/Src/global.o \
 ./Core/Src/input_reading.o \
 ./Core/Src/led_display.o \
@@ -44,8 +44,8 @@ C_DEPS += \
 ./Core/Src/button.d \
 ./Core/Src/fsm_automatic_1.d \
 ./Core/Src/fsm_automatic_2.d \
-./Core/Src/fsm_manual.d \
 ./Core/Src/fsm_mode.d \
+./Core/Src/fsm_mode_Led7Seg.d \
 ./Core/Src/global.d \
 ./Core/Src/input_reading.d \
 ./Core/Src/led_display.d \

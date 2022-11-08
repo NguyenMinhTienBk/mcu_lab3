@@ -5,21 +5,17 @@
  *      Author: pc
  */
 
-/*
- * FSM_AUTOMATIC.c
- *
- *  Created on: Sep 30, 2022
- *      Author: pc
- */
-
 #include <fsm_mode.h>
 
 void fsm_mode_run(){
-	switch (status_1){
-//	case INIT:
-//		status = MODE1;
-//		setTimer1(500);
-//		break;
+	switch (status_mode){
+	case INIT:
+		status_mode = MODE1;
+		status_ver = INIT;
+		status_hor = INIT;
+		status_led7seg = MODE1_led7seg_1;
+		//setTimer1(500);
+		break;
 	case MODE1 :
 
 //		if (timer1_flag == 1){
@@ -28,8 +24,8 @@ void fsm_mode_run(){
 //		}
 //
 		if (isButtonflag(but1) == 1){
-			status_1 = MODE2;
-			setTimer3(1000);
+			status_mode = MODE2;
+			//setTimer3(1000);
 		}
 
 		break;
@@ -43,8 +39,8 @@ void fsm_mode_run(){
 //		}
 //
 		if (isButtonflag(but1) == 1){
-			status_1 = MODE3;
-			setTimer3(1000);
+			status_mode = MODE3;
+			//setTimer3(1000);
 		}
 
 		break;
@@ -56,15 +52,18 @@ void fsm_mode_run(){
 //		}
 //
 		if (isButtonflag(but1) == 1){
-			status_1 = MODE4;
-			setTimer3(1000);
+			status_mode = MODE4;
+			//setTimer3(1000);
 		}
 
 		break;
 	case MODE4:
 		if (isButtonflag(but1) == 1){
-			status_1 = MODE1;
-			setTimer3(1000);
+			status_mode = MODE1;
+			status_ver = INIT;
+			status_hor = INIT;
+			status_led7seg = MODE1_led7seg_1;
+			//setTimer3(1000);
 		}
 		break;
 	default:

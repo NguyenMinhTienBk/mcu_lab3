@@ -14,12 +14,13 @@
 //}
 
 void fsm_automatic_1_run(){
-	switch (status_1){
+	switch (status_ver){
 	case INIT:
 
 		SetOffVer();
-		status_1 = AUTO_RED;
 		led12 = timered;
+		status_ver = AUTO_RED;
+
 		//display7SEGLED12(led12);
 		//setTimer3(1000);
 		//display7Seg_countdown_Led12();
@@ -29,7 +30,7 @@ void fsm_automatic_1_run(){
 	case AUTO_RED:
 		SetRedVer();
 		if (timer1_flag == 1){
-			status_1 = AUTO_GREEN;
+			status_ver = AUTO_GREEN;
 			led12 = timegreen;
 			//display7SEGLED12(led12);
 			setTimer1(timeTimer(timegreen));
@@ -47,7 +48,7 @@ void fsm_automatic_1_run(){
 
 		SetGreenVer();
 		if (timer1_flag == 1){
-			status_1 = AUTO_YELLOW;
+			status_ver = AUTO_YELLOW;
 			led12 = timeyellow;
 			//display7SEGLED12(led12);
 			setTimer1(timeTimer(timeyellow));
@@ -63,7 +64,7 @@ void fsm_automatic_1_run(){
 
 		SetYellowVer();
 		if (timer1_flag == 1){
-			status_1 = AUTO_RED;
+			status_ver = AUTO_RED;
 			led12 = timered;
 			//display7SEGLED12(led12);
 			setTimer1(timeTimer(timered));
