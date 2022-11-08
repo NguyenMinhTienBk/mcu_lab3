@@ -94,6 +94,7 @@ void fsm_mode_run(){
 //			status_led7seg = MODE1_led7seg_1;
 			//setTimer3(1000);
 		}
+		break;
 		if (isButtonflag(but2) == 1){
 			led34++;
 			if (led34 > 99){
@@ -103,7 +104,6 @@ void fsm_mode_run(){
 		if (isButtonflag(but3) == 1){
 			timegreen = led34;
 		}
-		break;
 	default:
 		break;
 	}
