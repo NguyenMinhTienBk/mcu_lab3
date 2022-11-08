@@ -52,7 +52,7 @@ unsigned char is_button_pressed_3s(unsigned char index){
 	return ( flagForButtonPress1s[index] == 1);
 }
 
-enum ButtonState{ BUTTON_RELEASED , BUTTON_PRESSED , BUTTON_PRESSED_MORE_THAN_1_SECOND } ;
+enum ButtonState{ BUTTON_RELEASED , BUTTON_PRESSED , BUTTON_PRESSED_MORE_THAN_3_SECOND } ;
 enum ButtonState buttonState[N0_OF_BUTTONS] = {BUTTON_RELEASED} ;
 void fsm_for_input_processing(uint8_t index ){
 	switch ( buttonState[index] ){
@@ -84,13 +84,13 @@ void fsm_for_input_processing(uint8_t index ){
 					counterForButtonPress1s[index] = 0;
 				}
 				if( is_button_pressed_3s(index) ){
-					buttonState[index] = BUTTON_PRESSED_MORE_THAN_1_SECOND ;
+					buttonState[index] = BUTTON_PRESSED_MORE_THAN_3_SECOND ;
 					flagForButtonPress1s[index] = 0;
 
 				}
 			}
 			break ;
-		case BUTTON_PRESSED_MORE_THAN_1_SECOND :
+		case BUTTON_PRESSED_MORE_THAN_3_SECOND :
 			if (! is_button_pressed(index)){
 			//if (buttonBuffer[index] == BUTTON_IS_RELEASED){
 				buttonState[index] = BUTTON_RELEASED;

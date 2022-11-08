@@ -6,8 +6,8 @@
  */
 
 #include <fsm_mode_Led7Seg.h>
-//int Ts = 10;
-//int count = 1;
+int Ts = 10;
+int count = 1;
 void fsm_mode_led7seg(){
 
 	switch (status_led7seg){
@@ -17,8 +17,7 @@ void fsm_mode_led7seg(){
 				SetLed7Seg1On();
 				update7SEG(index_led);
 				index_led++;
-//				setTimer3(Ts);
-				setTimer3(250);
+				setTimer3(Ts);
 			break;
 		case MODE1_led7seg_1:
 			if (timer3_flag == 1){
@@ -27,8 +26,7 @@ void fsm_mode_led7seg(){
 				SetLed7Seg2On();
 				update7SEG(index_led);
 				index_led++;
-//				setTimer3(Ts);
-				setTimer3(250);
+				setTimer3(Ts);
 			}
 			break;
 		case MODE1_led7seg_2:
@@ -38,8 +36,7 @@ void fsm_mode_led7seg(){
 				SetLed7Seg3On();
 				update7SEG(index_led);
 				index_led++;
-//				setTimer3(Ts);
-				setTimer3(250);
+				setTimer3(Ts);
 			}
 			break;
 		case MODE1_led7seg_3:
@@ -50,14 +47,13 @@ void fsm_mode_led7seg(){
 				SetLed7Seg4On();
 				update7SEG(index_led);
 				index_led = 0;
-//			    if ((Ts * 4) * count >= 1000){
-//			    	led12--;
-//			    	led34--;
-//			    	count = 1;
-//			    }
-//			    else count++;
-//				setTimer3(Ts);
-				setTimer3(250);
+			    if ((Ts * 4) * count >= 1000){
+			    	led12--;
+			    	led34--;
+			    	count = 1;
+			    }
+			    else count++;
+				setTimer3(Ts);
 			}
 			break;
 		case MODE1_led7seg_4:
@@ -67,7 +63,7 @@ void fsm_mode_led7seg(){
 				SetLed7Seg1On();
 				update7SEG(index_led);
 				index_led++;
-				setTimer3(250);
+				setTimer3(50);
 			}
 			break;
 		case MODE_MODIFY_led7seg_1:
