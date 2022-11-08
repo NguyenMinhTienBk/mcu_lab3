@@ -11,9 +11,9 @@
 #include <software_timer.h>
 #include "global.h"
 #include "button.h"
+#include "input_reading.h"
 #include "led_display.h"
 
-//#include "traffic.h"
 void fsm_mode_run();
 
 

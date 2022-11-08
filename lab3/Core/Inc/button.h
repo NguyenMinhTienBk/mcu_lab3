@@ -15,7 +15,7 @@
 
 //extern int button1_flag;
 //int isButton1flag();
-int isButtonflag(int index);
+//int isButtonflag(int index);
 
 void getKeyInput();
 

@@ -140,6 +140,3 @@ void button_reading(void){
 
 	}
 }
-
-
-

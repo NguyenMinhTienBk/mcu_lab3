@@ -21,58 +21,59 @@
  */
 
 #include "fsm_automatic_2.h"
-//int temp = 0;
-
-int timeTimer(int time){
-	return time * 1000;
-}
 
 void fsm_automatic_2_run(){
-	switch (status_2){
+	switch (status_hor){
 	case INIT:
 		SetOffHor();
-		status_2 = AUTO_GREEN;
-		//temp = timeredver * 1000;
+		led34 = timegreen;
+		status_hor = AUTO_GREEN;
 		setTimer2(timeTimer(timegreen));
 		break;
 	case AUTO_RED :
 		SetRedHor();
 		if (timer2_flag == 1){
-			status_2 = AUTO_GREEN;
+			status_hor = AUTO_GREEN;
+			led34 = timegreen;
 			setTimer2(timeTimer(timegreen));
 		}
-
-//		if (isButton1flag() == 1){
-//			status = MAN_RED;
-//			setTimer1(1000);
-//		}
 
 		break;
 	case AUTO_GREEN:
 
 		SetGreenHor();
 		if (timer2_flag == 1){
-			status_2 = AUTO_YELLOW;
+			status_hor = AUTO_YELLOW;
+			led34 = timeyellow;
 			setTimer2(timeTimer(timeyellow));
 		}
-
-//		if (isButton1flag() == 1){
-//			status = MAN_GREEN;
-//			setTimer1(1000);
-//		}
 
 		break;
 	case AUTO_YELLOW:
 		SetYellowHor();
 		if (timer2_flag == 1){
-			status_2 = AUTO_RED;
+			status_hor = AUTO_RED;
+			led34 = timered;
 			setTimer2(timeTimer(timered));
 		}
-//		if (isButton1flag() == 1){
-//			//button1_flag = 0;
-//			status = MAN_YELLOW;
-//			setTimer1(1000);
-//		}
+		break;
+	case MODIFY_RED:
+		if (timer2_flag == 1){
+			BlinkyRedHor();
+			setTimer2(500);
+		}
+		break;
+	case MODIFY_GREEN:
+		if (timer2_flag == 1){
+			BlinkyGreenHor();
+			setTimer2(500);
+		}
+		break;
+	case MODIFY_YELLOW:
+		if (timer2_flag == 1){
+			BlinkyYellowHor();
+			setTimer2(500);
+		}
 		break;
 	default:
 		break;

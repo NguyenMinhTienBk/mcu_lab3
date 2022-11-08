@@ -6,6 +6,8 @@
  */
 #include "led_display.h"
 #include "main.h"
+#include "global.h"
+#include "software_timer.h"
 
 void display7SEG(int num){
 	switch (num) {
@@ -112,8 +114,8 @@ void display7SEG(int num){
 }
 
 const int MAX_LED = 4;
-// int index_led = 0;
-int led_buffer[4] = {1, 5, 0, 8};
+int led_buffer[4] = {0, 0, 0, 0};
+
 void update7SEG(int index){
     switch (index){
 		case 0: {
@@ -137,24 +139,101 @@ void update7SEG(int index){
     }
 }
 
-void updateLed12Buffer(int led12){
-	if (led12 < 10){
-		led_buffer[0] = 0;
-		led_buffer[1] = led12;
-	} else {
-		led_buffer[0] = led12 / 10;
-		led_buffer[1] = led12 % 10;
-	}
+void updateLedBuffer(int led1_2,int led3_4){
+	led_buffer[0] = led1_2 / 10;
+	led_buffer[1] = led1_2 % 10;
+	led_buffer[2] = led3_4 / 10;
+	led_buffer[3] = led3_4 % 10;
 }
-void updateLed34Buffer(int led34){
-	if (led34 < 10){
-		led_buffer[2] = 0;
-		led_buffer[3] = led34;
-	} else {
-		led_buffer[2] = led34 / 10;
-		led_buffer[3] = led34 % 10;
-	}
+
+void BlinkyRedVer(){
+	//HAL_GPIO_WritePin(LED_RED_VER_GPIO_Port, LED_RED_VER_Pin, GPIO_PIN_SET);
+	HAL_GPIO_TogglePin(LED_RED_VER_GPIO_Port, LED_RED_VER_Pin);
+	HAL_GPIO_WritePin(LED_GREEN_VER_GPIO_Port, LED_GREEN_VER_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_YELLOW_VER_GPIO_Port, LED_YELLOW_VER_Pin, GPIO_PIN_SET);
 }
+void BlinkyGreenVer(){
+	HAL_GPIO_TogglePin(LED_GREEN_VER_GPIO_Port, LED_GREEN_VER_Pin);
+	HAL_GPIO_WritePin(LED_RED_VER_GPIO_Port, LED_RED_VER_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_YELLOW_VER_GPIO_Port, LED_YELLOW_VER_Pin, GPIO_PIN_SET);
+}
+void BlinkyYellowVer(){
+	HAL_GPIO_TogglePin(LED_YELLOW_VER_GPIO_Port, LED_YELLOW_VER_Pin);
+	HAL_GPIO_WritePin(LED_RED_VER_GPIO_Port, LED_RED_VER_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GREEN_VER_GPIO_Port, LED_GREEN_VER_Pin, GPIO_PIN_SET);
+}
+
+void BlinkyRedHor(){
+	//HAL_GPIO_WritePin(LED_RED_HOR_GPIO_Port, LED_RED_HOR_Pin, GPIO_PIN_SET);
+	HAL_GPIO_TogglePin(LED_RED_HOR_GPIO_Port, LED_RED_HOR_Pin);
+	HAL_GPIO_WritePin(LED_GREEN_HOR_GPIO_Port, LED_GREEN_HOR_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_YELLOW_HOR_GPIO_Port, LED_YELLOW_HOR_Pin, GPIO_PIN_SET);
+}
+void BlinkyGreenHor(){
+	HAL_GPIO_TogglePin(LED_GREEN_HOR_GPIO_Port, LED_GREEN_HOR_Pin);
+	HAL_GPIO_WritePin(LED_RED_HOR_GPIO_Port, LED_RED_HOR_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_YELLOW_HOR_GPIO_Port, LED_YELLOW_HOR_Pin, GPIO_PIN_SET);
+}
+void BlinkyYellowHor(){
+	HAL_GPIO_TogglePin(LED_YELLOW_HOR_GPIO_Port, LED_YELLOW_HOR_Pin);
+	HAL_GPIO_WritePin(LED_RED_HOR_GPIO_Port, LED_RED_HOR_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GREEN_HOR_GPIO_Port, LED_GREEN_HOR_Pin, GPIO_PIN_SET);
+}
+
+void SetLed7Seg1On(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET );
+}
+void SetLed7Seg2On(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET );
+}
+void SetLed7Seg3On(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET );
+}
+void SetLed7Seg4On(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_RESET );
+}
+void SetLed7Seg12On(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET );
+	//HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET );
+	//HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_RESET );
+}
+void SetLed7Seg34On(){
+	//HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET );
+	//HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_RESET );
+}
+void SetLed7SegallOn(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_RESET );
+}
+void SetLed7SegallOff(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET );
+}
+
+void SetRedVerHor(){
+	HAL_GPIO_WritePin(LED_RED_VER_GPIO_Port, LED_RED_VER_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_RED_HOR_GPIO_Port, LED_RED_HOR_Pin, GPIO_PIN_RESET);
+}
+
 
 void SetOffVer(){
 	HAL_GPIO_WritePin(LED_RED_VER_GPIO_Port, LED_RED_VER_Pin, GPIO_PIN_SET);

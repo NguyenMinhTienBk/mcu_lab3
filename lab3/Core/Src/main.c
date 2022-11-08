@@ -23,10 +23,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "button.h"
-#include "fsm_manual.h"
 #include "fsm_automatic_1.h"
 #include "fsm_automatic_2.h"
 #include <fsm_mode.h>
+#include <fsm_mode_Led7Seg.h>
 #include <software_timer.h>
 #include "led_display.h"
 
@@ -97,9 +97,15 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-
-  status_1 = INIT;
-  status_2 = INIT;
+  status_mode = INIT;
+//  status_ver = INIT;
+//  status_hor = INIT;
+  //int status_led7seg = 0;
+  //int index_led = 0;
+  setTimer1(1000);
+  setTimer2(1000);
+  setTimer3(1000);
+  setTimer4(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -108,9 +114,51 @@ int main(void)
   while (1)
   {
 	  //fsm_for_input_processing();
+	  fsm_mode_run();
 	  fsm_automatic_1_run();
 	  fsm_automatic_2_run();
+	  fsm_mode_led7seg();
 
+//	  if (timer3_flag == 1){
+//		  updateLedBuffer(led12,led34);
+//		  switch (status_led7seg) {
+//		  case 0:
+//			  SetLed7Seg1On();
+//			  update7SEG(index_led);
+//			  status_led7seg = 1;
+//			  index_led++;
+//			  break;
+//		  case 1:
+//			  SetLed7Seg2On();
+//			  update7SEG(index_led);
+//			  status_led7seg = 2;
+//			  index_led++;
+//			  break;
+//		  case 2:
+//			  SetLed7Seg3On();
+//			  update7SEG(index_led);
+//			  status_led7seg = 3;
+//			  index_led++;
+//			  break;
+//		  case 3:
+//			  SetLed7Seg4On();
+//			  update7SEG(index_led);
+//			  status_led7seg = 0;
+//			  index_led = 0;
+//			  led12--;
+//			  led34--;
+//			  break;
+//		  default:
+//			  break;
+//		  }
+//		  setTimer3(250);
+//	  }
+//	  if(timer4_flag == 1){
+//
+//		  	led12--;
+//	  		led34--;
+//	  		setTimer4(1000);
+//	  }
 	  //updateLedBuffer(timered, led34)
 	  //fsm_mode_run();
     /* USER CODE END WHILE */

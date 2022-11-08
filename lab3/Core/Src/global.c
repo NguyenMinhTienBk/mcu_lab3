@@ -6,9 +6,12 @@
  */
 # include "global.h"
 //# include "main.h"
+int status_mode = 0;
+int status_ver = 0;
+int status_hor = 0;
+int status_led7seg = 0;
 
-int status_1 = 0;
-int status_2 = 0;
+int index_led = 0;
 
 int but1 = 0;
 int but2 = 1;
@@ -18,10 +21,9 @@ int timered = 5;
 int timegreen = 3;
 int timeyellow = 2;
 
-//int timeredver = 5;
-//int timegreenver = 3;
-//int timeyellowver = 2;
+int led12 = 5;
+int led34 = 3;
 
-//int timeredhor = 5;
-//int timegreenhor = 3;
-//int timeyellowhor = 2;
+int timeTimer(int time){
+	return time * 1000;
+}
