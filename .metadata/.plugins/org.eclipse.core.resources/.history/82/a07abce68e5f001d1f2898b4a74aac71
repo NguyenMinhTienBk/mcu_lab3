@@ -14,7 +14,6 @@ void fsm_mode_run(){
 		status_ver = INIT;
 		status_hor = INIT;
 		status_led7seg = INIT;
-		index_led = 0;
 		//setTimer1(500);
 		break;
 	case MODE1 :

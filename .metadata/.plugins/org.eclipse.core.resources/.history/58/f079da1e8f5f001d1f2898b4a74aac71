@@ -57,8 +57,6 @@ void fsm_mode_led7seg(){
 //			    }
 //			    else count++;
 //				setTimer3(Ts);
-				led12--;
-				led34--;
 				setTimer3(250);
 			}
 			break;
