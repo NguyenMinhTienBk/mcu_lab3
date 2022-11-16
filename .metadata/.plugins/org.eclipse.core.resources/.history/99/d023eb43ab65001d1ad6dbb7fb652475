@@ -89,7 +89,10 @@ void fsm_mode_run(){
 			clearTimer2();
 			clearTimer3();
 			status_mode = INIT;
-
+//			status_ver = INIT;
+//			status_hor = INIT;
+//			status_led7seg = MODE1_led7seg_1;
+			//setTimer3(1000);
 		}
 		if (isButtonflag(but2) == 1){
 			led34++;
